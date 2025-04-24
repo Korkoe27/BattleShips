@@ -35,16 +35,16 @@ function hitsAndsinks (ships, playerGuesses) {
 
         
         // create boolean values of hit and no hit positions
-        const hitPositions = positions.map((pos) => playerGuesses.includes(pos))
+        const hitPosition = positions.map((pos) => playerGuesses.includes(pos))
 
         // check if all the positions were hit
-        const sinkShip = hitPositions.every(val => val === true)
+        const sinkShip = hitPosition.every(val => val === true)
 
         // update sinks if all postions were hit
         if (sinkShip) sinks = sinks + 1
 
         // update the number of hits
-        hits = hits + hitPositions.filter(val => val === true).length
+        hits = hits + hitPosition.filter(val => val === true).length
         
     }
 
